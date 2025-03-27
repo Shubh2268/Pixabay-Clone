@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router'
 import Home from './pages/Home'
 import Details from './pages/Details'
 import Favorites from './pages/Favorites'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/image/:id' element={<Details />} />

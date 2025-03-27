@@ -6,27 +6,45 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav>
-            <div className='container mx-auto px-6 md:px-14 py-2 flex justify-between items-center'>
+        <nav className='w-full z-20 fixed'>
+            <div className='px-5 flex items-center justify-between w-full h-full'>
+
                 {/* Logo */}
-                <Link to='/' className='text-3xl font-bold text-green-400 flex items-center px-3 py-1'>Pixora</Link>
+                <div className='flex items-center'>
+                    <Link to='/' className='text-2xl sm:text-3xl font-bold py-2 text-green-500'>Pixora</Link>
+                </div>
 
-                {/* Mobile Menu Button */}
-                <button className='md:hidden text-white text-2xl' onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <FiX /> : <FiMenu />}
-                </button>
+                <ul className='hidden md:flex'>
+                    <Link to='/' className='m-2 font-medium text-white hover:text-green-300'>Home</Link>
+                    <Link to='/favorites' className='m-2 font-medium text-white hover:text-green-300'>Favorites</Link>
+                </ul>
 
-                {/* Navigation Links */}
-                <div
-                    className={`absolute md:relative top-16 md:top-auto left-0 w-full md:w-auto shadow-md md:shadow-none transition-all duration-300 ease-in-out transform origin-top ${menuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} md:opacity-100 md:scale-y-100 md:flex md:items-center md:gap-6 p-6 md:p-0`}>
+                {/* Mobile Menu icon */}
+                <div className='md:hidden'>
+                    <div className='cursor-pointer text-white'>
+                        <FiMenu onClick={() => setMenuOpen(true)} size={25} />
+                    </div>
+                </div>
+            </div>
 
-                    <Link to='/' className='block text-green-400 font-medium py-2 md:py-0 text-center hover:text-green-500' onClick={() => setMenuOpen(false)}>
-                        Home
-                    </Link>
+            {/* Mobile Menu */}
+            <div className={menuOpen ? 'md:hidden fixed left-0 top-0 w-full h-full bg-gray-400/70 backdrop-blur' : ''}>
+                <div className={menuOpen ? 'fixed left-0 top-0 w-4/5 h-full bg-gray-900/90 text-white p-10 ease-in duration-500' : 'fixed top-0 left-[-100%] h-full p-10 duration-500 ease-in'}>
+                    <div>
+                        <div className='flex w-full items-center justify-between'>
+                            <h2 onClick={() => setMenuOpen(false)} className='text-2xl font-bold text-green-500 cursor-pointer'>Pixora</h2>
 
-                    <Link to='/favorites' className='block text-green-400 font-medium py-2 md:py-0 text-center hover:text-green-500' onClick={() => setMenuOpen(false)}>
-                        Favorites
-                    </Link>
+                            <div className='p-3 cursor-pointer'>
+                                <FiX onClick={() => setMenuOpen(false)} size={25} />
+                            </div>
+                        </div>
+                        
+                        <ul className='flex flex-col mt-5 items-start justify-around'>
+                            <Link to='/' onClick={() => setMenuOpen(false)} className='m-2 font-medium text-white hover:text-green-300'>Home</Link>
+
+                            <Link to='/favorites' onClick={() => setMenuOpen(false)} className='m-2 font-medium text-white hover:text-green-300'>Favorites</Link>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>

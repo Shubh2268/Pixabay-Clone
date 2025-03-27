@@ -1,15 +1,9 @@
-import Navbar from './Navbar';
 import bgImage from '../assets/bgImage.jpg';
 
 const Header = () => {
   return (
     <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[75vh] flex flex-col' style={{ backgroundImage: `url(${bgImage})` }}>
       <div className='absolute inset-0 bg-black opacity-50' />
-
-      {/* Navbar */}
-      <div className='relative z-10'>
-        <Navbar />
-      </div>
 
       {/* Header Content */}
       <div className='relative z-10 flex flex-col items-center justify-center flex-grow text-center px-6'>
@@ -27,7 +21,7 @@ const Header = () => {
             placeholder='Search for images...'
             className='w-full max-w-lg px-4 py-1 md:py-3 border-2 border-green-500 rounded-l-full backdrop-blur-lg text-white focus:outline-none'
           />
-          
+
           <button type='submit' className='px-6 py-1 md:py-3 border-2 border-green-500 bg-green-500 text-white font-semibold -ml-1 rounded-r-full hover:bg-green-600 transition cursor-pointer'>Search</button>
         </form>
       </div>
