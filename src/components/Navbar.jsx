@@ -6,8 +6,8 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className='bg-white shadow-md'>
-            <div className='container mx-auto px-8 md:px-14 py-3 flex justify-between items-center'>
+        <nav className='bg-gray-100 shadow-md'>
+            <div className='container mx-auto px-6 md:px-14 py-2 flex justify-between items-center'>
                 {/* Logo */}
                 <Link to='/' className='text-3xl font-bold text-green-400 flex items-center px-3 py-1'>Pixora</Link>
 
