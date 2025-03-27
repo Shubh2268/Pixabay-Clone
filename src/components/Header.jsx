@@ -1,30 +1,34 @@
-import bgImage from '../assets/bgImage.jpg'
+import Navbar from './Navbar';
+import bgImage from '../assets/bgImage.jpg';
 
 const Header = () => {
-
   return (
-    <header className='relative bg-cover bg-center py-24 md:py-28 text-center text-white'
-      style={{ backgroundImage: `url(${bgImage})` }}>
+    <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[75vh] flex flex-col' style={{ backgroundImage: `url(${bgImage})` }}>
+      <div className='absolute inset-0 bg-black opacity-50' />
 
-      <div className='absolute inset-0 bg-black opacity-50'></div>
+      {/* Navbar */}
+      <div className='relative z-10'>
+        <Navbar />
+      </div>
 
-      <div className='relative z-10 max-w-5xl mx-auto px-6'>
-        <h1 className='text-4xl md:text-7xl font-extrabold text-gray-100'>
-          Discover Stunning Images with <span className='text-green-400 md:py-5'>Pixora</span>
+      {/* Header Content */}
+      <div className='relative z-10 flex flex-col items-center justify-center flex-grow text-center px-6'>
+        <h1 className='max-w-5xl text-4xl md:text-7xl font-extrabold text-gray-100'>
+          Discover Stunning Images with <span className='text-green-400'>Pixora</span>
         </h1>
         <p className='my-2 md:my-4 text-gray-200'>
           Find high-quality images from Pixora with ease.
         </p>
 
         {/* Search Bar */}
-        <form className='mt-6 flex items-center justify-center'>
+        <form className='mt-6 w-full flex items-center justify-center'>
           <input
             type='text'
             placeholder='Search for images...'
-            className='w-full max-w-lg px-4 py-2 md:py-3 border-2 border-green-500 rounded-l-full bg-gray-100 text-black focus:outline-none'
+            className='w-full max-w-lg px-4 py-1 md:py-3 border-2 border-green-500 rounded-l-full backdrop-blur-lg text-white focus:outline-none'
           />
-
-          <button type='submit' className='px-6 py-2 md:py-3 border-2 border-green-500 bg-green-500 text-white font-semibold -ml-1 rounded-r-full hover:bg-green-600 transition'>Search</button>
+          
+          <button type='submit' className='px-6 py-1 md:py-3 border-2 border-green-500 bg-green-500 text-white font-semibold -ml-1 rounded-r-full hover:bg-green-600 transition cursor-pointer'>Search</button>
         </form>
       </div>
     </header>
