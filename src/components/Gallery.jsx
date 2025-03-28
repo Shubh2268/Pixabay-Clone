@@ -39,11 +39,11 @@ const Gallery = () => {
 
                     {/* Pagination */}
                     <div className='flex justify-center items-center gap-4 mt-8'>
-                        <button onClick={prevPage} disabled={page === 1} className={`px-4 py-2 border-2 border-green-500 rounded-md font-semibold transition ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-500 hover:text-white'}`}>Previous</button>
+                        <button onClick={prevPage} disabled={page === 1} className={`px-4 py-1 border-2 border-green-500 rounded-md font-semibold transition ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-500 hover:text-white'}`}>&lt; Previous</button>
 
-                        <span className='text-lg font-semibold text-gray-700'>Page {page}</span>
+                        <span className='text-lg font-semibold text-gray-800'>Page {page}</span>
 
-                        <button onClick={nextPage} className='px-4 py-2 border-2 border-green-500 rounded-md font-semibold transition hover:bg-green-500 hover:text-white'>Next</button>
+                        <button onClick={nextPage} className='px-4 py-1 border-2 border-green-500 rounded-md font-semibold transition hover:bg-green-500 hover:text-white'>Next &gt;</button>
                     </div>
                 </>
             )}
