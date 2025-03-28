@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaCameraRetro } from 'react-icons/fa';
-import { MdOutlineHome, MdFavoriteBorder } from 'react-icons/md';
+import { MdHome, MdFavorite } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -33,11 +33,11 @@ const Navbar = () => {
                 {/* Desktop Links */}
                 <ul className='hidden md:flex'>
                     <Link to='/' className='flex items-center m-2 font-medium text-white hover:text-green-300'>
-                        <MdOutlineHome size={20} />
+                        <MdHome size={20} />
                         <span className='ml-1'>Home</span>
                     </Link>
                     <Link to='/favorites' className='flex items-center m-2 font-medium text-white hover:text-green-300'>
-                        <MdFavoriteBorder size={18} />
+                        <MdFavorite size={18} />
                         <span className='ml-1'>Favorites</span>
                     </Link>
                 </ul>
@@ -61,11 +61,11 @@ const Navbar = () => {
                         {/* Links */}
                         <ul className='mt-6 space-y-4'>
                             <Link to='/' className='flex items-center text-lg hover:text-green-300' onClick={() => setMenuOpen(false)}>
-                                <MdOutlineHome size={20} />
+                                <MdHome size={20} />
                                 <span className='ml-1'>Home</span>
                             </Link>
                             <Link to='/favorites' className='flex items-center text-lg hover:text-green-300' onClick={() => setMenuOpen(false)}>
-                                <MdFavoriteBorder size={20} />
+                                <MdFavorite size={20} />
                                 <span className='ml-1'>Favorites</span>
                             </Link>
                         </ul>
