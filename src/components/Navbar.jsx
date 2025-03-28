@@ -19,7 +19,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 shadow-md' : ''
+        <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 shadow-md' : ''
             }`}>
             <div className='px-5 flex items-center justify-between w-full h-16'>
                 {/* Logo */}
@@ -51,7 +51,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className='fixed md:hidden inset-0 bg-black/50 backdrop-blur-sm' onClick={() => setMenuOpen(false)}>
-                    <div className='fixed left-0 top-0 w-4/5 h-full bg-green-400 text-white p-10 transition-transform duration-300 ease-in-out'>
+                    <div className='fixed left-0 top-0 w-4/5 h-full bg-black/80 text-white p-10 transition-transform duration-300 ease-in-out'>
                        
                         <div className='flex justify-between items-center'>
                             <h2 className='text-3xl font-bold text-white'>pixora</h2>
