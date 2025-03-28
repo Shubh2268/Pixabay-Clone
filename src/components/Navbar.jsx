@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { MdOutlineHome, MdFavoriteBorder } from 'react-icons/md';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -15,8 +16,14 @@ const Navbar = () => {
                 </div>
 
                 <ul className='hidden md:flex'>
-                    <Link to='/' className='m-2 font-medium text-white hover:text-green-300'>Home</Link>
-                    <Link to='/favorites' className='m-2 font-medium text-white hover:text-green-300'>Favorites</Link>
+                    <Link to='/' className='flex items-center justify-center m-2 font-medium text-white hover:text-green-300'>
+                        <MdOutlineHome size={20} />
+                        <span>Home</span>
+                    </Link>
+                    <Link to='/favorites' className='flex items-center m-2 font-medium text-white hover:text-green-300'>
+                        <MdFavoriteBorder size={20} />
+                        <span>Favorites</span>
+                    </Link>
                 </ul>
 
                 {/* Mobile Menu icon */}
@@ -38,7 +45,7 @@ const Navbar = () => {
                                 <FiX onClick={() => setMenuOpen(false)} size={25} />
                             </div>
                         </div>
-                        
+
                         <ul className='flex flex-col mt-5 items-start justify-around'>
                             <Link to='/' onClick={() => setMenuOpen(false)} className='m-2 font-medium text-white hover:text-green-300'>Home</Link>
 
