@@ -11,7 +11,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className='flex items-center text-white'>
-                    <Link to='/' className='text-2xl sm:text-3xl font-bold py-1 px-3 rounded-full md:m-2'>pixora</Link>
+                    <Link to='/' className='text-2xl sm:text-3xl font-bold py-1 px-3 md:m-2'>pixora</Link>
                 </div>
 
                 <ul className='hidden md:flex'>
