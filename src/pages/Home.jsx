@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-gray-100'>
       <Header />
       <Gallery />
     </div>
