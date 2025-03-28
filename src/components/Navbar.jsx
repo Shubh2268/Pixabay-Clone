@@ -10,8 +10,8 @@ const Navbar = () => {
             <div className='px-5 flex items-center justify-between w-full h-full'>
 
                 {/* Logo */}
-                <div className='flex items-center'>
-                    <Link to='/' className='text-2xl sm:text-3xl font-bold py-2 text-green-500'>Pixora</Link>
+                <div className='flex items-center text-white'>
+                    <Link to='/' className='text-2xl sm:text-3xl font-bold py-1 px-3 rounded-full md:m-2'>pixora</Link>
                 </div>
 
                 <ul className='hidden md:flex'>
