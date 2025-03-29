@@ -52,9 +52,12 @@ const Navbar = () => {
             {menuOpen && (
                 <div className='fixed md:hidden inset-0 bg-black/50 backdrop-blur-sm' onClick={() => setMenuOpen(false)}>
                     <div className='fixed left-0 top-0 w-4/5 h-full bg-black/80 text-white p-10 transition-transform duration-300 ease-in-out'>
-                       
+
                         <div className='flex justify-between items-center'>
-                            <h2 className='text-3xl font-bold text-white'>pixora</h2>
+                            <Link to='/' className='flex items-center text-2xl sm:text-3xl font-bold py-1'>
+                                <span className='mx-1'>pixora</span>
+                                <FaCameraRetro size={20} />
+                            </Link>
                             <FiX size={25} className='cursor-pointer' onClick={() => setMenuOpen(false)} />
                         </div>
 
