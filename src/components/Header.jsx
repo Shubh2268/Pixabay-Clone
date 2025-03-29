@@ -3,7 +3,8 @@ import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
-    <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[75vh] flex flex-col' style={{ backgroundImage: `url(${bgImage})` }}>
+    <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[75vh] flex flex-col' 
+      style={{ backgroundImage: `url(${bgImage})` }}>
       <div className='absolute inset-0 bg-black opacity-50' />
 
       {/* Header Content */}
@@ -15,10 +16,11 @@ const Header = () => {
           Find high-quality images from Pixora with ease.
         </p>
 
-        {/* Search Bar Component */}
+        {/* Search Bar */}
         <div className='mt-6 w-full flex items-center justify-center'>
           <SearchBar />
         </div>
+
       </div>
     </header>
   );
