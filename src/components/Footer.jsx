@@ -1,43 +1,30 @@
 import { Link } from 'react-router';
-import { MdHome, MdFavorite } from 'react-icons/md';
 import { FaFacebook, FaTwitter, FaInstagram, FaCameraRetro } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className='bg-gray-100 text-black py-10'>
-            <div className='container mx-auto px-6 text-center md:text-left'>
+        <footer className='bg-black/80 text-white py-10'>
+            <div className='container mx-auto px-6 text-center'>
 
-                {/* Top Section */}
-                <div className='flex flex-col md:flex-row justify-between items-center mb-6'>
+                <Link to='/' className='flex items-center justify-center text-2xl sm:text-3xl font-bold py-1 px-3 active:scale-95 duration-300'>
+                    <span className='mx-1'>pixora</span>
+                    <FaCameraRetro size={22} />
+                </Link>
 
-                    <Link to='/' className='flex items-center text-2xl sm:text-3xl font-bold py-1 px-3'>
-                        <span className='mx-1'>pixora</span>
-                        <FaCameraRetro size={20} />
-                    </Link>
+                <p className='text-sm md:text-base text-gray-200 text-center max-w-xl md:max-w-2xl mx-auto mt-4 px-4'>
+                    " Every image holds a story, a memory, or a dream waiting to be felt. Let these moments speak to your heart, inspire your soul, and remind you of the beauty in the world. "
+                </p>
 
-                    {/* Quick Links */}
-                    <div className='mt-4 md:mt-0 flex gap-6 text-black'>
-                        <Link to='/' className='flex items-center hover:text-green-300' onClick={() => setMenuOpen(false)}>
-                            <MdHome size={20} />
-                            <span className='ml-1'>Home</span>
-                        </Link>
-                        <Link to='/favorites' className='flex items-center hover:text-green-300' onClick={() => setMenuOpen(false)}>
-                            <MdFavorite size={20} />
-                            <span className='ml-1'>Favorites</span>
-                        </Link>
-                    </div>
-
-                    {/* Social Icons */}
-                    <div className='flex gap-4 mt-4 md:mt-0'>
-                        <a href='#' className='text-blue-400'><FaFacebook size={20} /></a>
-                        <a href='#' className='text-blue-300'><FaTwitter size={20} /></a>
-                        <a href='#' className='text-pink-400'><FaInstagram size={20} /></a>
-                    </div>
+                {/* Social Media Icons */}
+                <div className='flex justify-center gap-5 mt-6'>
+                    <a href='#' className='text-blue-500 '><FaFacebook size={22} /></a>
+                    <a href='#' className='text-blue-400 '><FaTwitter size={22} /></a>
+                    <a href='#' className='text-pink-500 transition'><FaInstagram size={22} /></a>
                 </div>
 
-                <div className='border-t border-gray-500 my-4'></div>
+                <div className='border-t border-gray-400 my-6'></div>
 
-                <p className='text-sm text-black text-center'>
+                <p className='text-xs text-gray-200'>
                     &copy; {new Date().getFullYear()} Pixora. All rights reserved.
                 </p>
             </div>
