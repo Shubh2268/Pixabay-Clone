@@ -9,7 +9,7 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
-  // Fetch images whenever query or page changes
+  // Fetch images when query or page changes
   useEffect(() => {
     const loadImages = async () => {
       setLoading(true);
@@ -21,6 +21,14 @@ export const AppProvider = ({ children }) => {
     loadImages();
   }, [query, page]);
 
+  // Handle new search query (resets page)
+  const updateQuery = (newQuery) => {
+    if (newQuery !== query) {
+      setQuery(newQuery);
+      setPage(1); // Reset pagination on new search
+    }
+  };
+
   // Function to the next page
   const nextPage = () => setPage((prevPage) => prevPage + 1);
 
@@ -28,7 +36,7 @@ export const AppProvider = ({ children }) => {
   const prevPage = () => setPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
 
   return (
-    <AppContext.Provider value={{ images, query, setQuery, loading, page, setPage, nextPage, prevPage }}>
+    <AppContext.Provider value={{ images, query, updateQuery, loading, page, nextPage, prevPage }}>
       {children}
     </AppContext.Provider>
   );

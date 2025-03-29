@@ -1,4 +1,5 @@
 import bgImage from '../assets/bgImage.jpg';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
@@ -14,16 +15,10 @@ const Header = () => {
           Find high-quality images from Pixora with ease.
         </p>
 
-        {/* Search Bar */}
-        <form className='mt-6 w-full flex items-center justify-center'>
-          <input
-            type='text'
-            placeholder='Search for images...'
-            className='w-full max-w-lg px-4 py-1 md:py-3 border-y border-l border-gray-400 rounded-l-full backdrop-blur-lg text-white focus:outline-none'
-          />
-
-          <button type='submit' className='px-6 py-1 md:py-3 border border-gray-300 bg-green-500 text-white font-semibold -ml-1 rounded-r-full hover:bg-green-600 transition cursor-pointer'>Search</button>
-        </form>
+        {/* Search Bar Component */}
+        <div className='mt-6 w-full flex items-center justify-center'>
+          <SearchBar />
+        </div>
       </div>
     </header>
   );
