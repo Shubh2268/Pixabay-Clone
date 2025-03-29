@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [images, setImages] = useState([]);
-  const [query, setQuery] = useState('nature');
+  const [query, setQuery] = useState('trending');
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
