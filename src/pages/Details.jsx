@@ -1,28 +1,49 @@
-import { useEffect, useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { AppContext } from '../context/AppContext';
 
 const Details = () => {
   const { id } = useParams();
-  const { imageDetails, getImageDetails, loading } = useContext(AppContext);
+  const { getImageDetails, imageDetails, loading } = useContext(AppContext);
 
   useEffect(() => {
     getImageDetails(id);
-  }, [id, getImageDetails]);
+  }, [id]);
 
-  if (loading || !imageDetails) return <p className='text-center mt-10'>Loading...</p>;
+  if (loading || !imageDetails) return <p>Loading...</p>;
 
   return (
-    <div className='container mx-auto px-6 py-10 text-center'>
+    <div className='max-w-7xl mx-auto h-screen mt-5 p-4 flex items-center justify-center flex-col md:flex-row gap-6'>
+      {/* Left Side: Large Image */}
+      <div className='w-full md:w-3/4'>
+        <img
+          src={imageDetails.largeImageURL}
+          alt='Detailed view'
+          className='w-full h-auto rounded-lg'
+        />
+      </div>
 
-      <h2 className='text-3xl font-bold text-gray-800 mb-4'>Image Details</h2>
+      {/* Right Sidebar */}
+      <div className='w-full md:w-1/4 flex flex-col gap-4 bg-white p-4 shadow-md rounded-lg'>
+        {/* Download Section */}
+        <div className='border rounded-lg p-3'>
+          <p className='text-sm text-gray-600'>Free for use under the Pixabay Content License</p>
+          <button className='w-full bg-green-500 text-white py-2 mt-2 rounded-md'>
+            Download
+          </button>
+        </div>
 
-      <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className='max-w-full mx-auto rounded-lg shadow-md' />
-
-      <p className='text-gray-700 mt-2'>Tags: {imageDetails.tags}</p>
-
-      <a href={imageDetails.largeImageURL} download className='mt-4 inline-block px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition'>Download Image</a>
-      
+        {/* Resolution Selection (Dropdown) */}
+        <div className='border rounded-lg p-3'>
+          <p className='font-semibold mb-2'>Download Options</p>
+          <select className='w-full p-2 border rounded'>
+            <option value='640x426'>640×426 JPG (106 KB)</option>
+            <option value='1280x853' selected>1280×853 JPG (349 KB)</option>
+            <option value='1920x1280'>1920×1280 JPG (740 KB)</option>
+            <option value='6000x4000'>6000×4000 JPG (8.9 MB)</option>
+          </select>
+        </div>
+      </div>
     </div>
   );
 };
