@@ -32,13 +32,13 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <ul className='hidden md:flex'>
-                    <Link to='/' className='flex items-center m-2 font-medium text-white hover:text-green-300'>
+                    <Link to='/' className='flex items-center m-2 font-medium text-green-300 hover:text-green-400'>
                         <MdHome size={20} />
-                        <span className='ml-1'>Home</span>
+                        <span className='ml-1 text-white'>Home</span>
                     </Link>
-                    <Link to='/favorites' className='flex items-center m-2 font-medium text-white hover:text-green-300'>
+                    <Link to='/favorites' className='flex items-center m-2 font-medium text-red-400 hover:text-red-500'>
                         <MdFavorite size={18} />
-                        <span className='ml-1'>Favorites</span>
+                        <span className='ml-1 text-white'>Favorites</span>
                     </Link>
                 </ul>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className='fixed md:hidden inset-0 bg-black/50 backdrop-blur-sm' onClick={() => setMenuOpen(false)}>
-                    <div className='fixed left-0 top-0 w-4/5 h-full bg-black/80 text-white p-10 transition-transform duration-300 ease-in-out'>
+                    <div className='fixed left-0 top-0 w-4/5 h-full bg-black/80 text-white p-10 transition-transform ease-in-out'>
 
                         <div className='flex justify-between items-center'>
                             <Link to='/' className='flex items-center text-2xl sm:text-3xl font-bold py-1'>
@@ -62,14 +62,14 @@ const Navbar = () => {
                         </div>
 
                         {/* Links */}
-                        <ul className='mt-6 space-y-4'>
-                            <Link to='/' className='flex items-center text-lg hover:text-green-300' onClick={() => setMenuOpen(false)}>
+                        <ul className='mt-6 space-y-6'>
+                            <Link to='/' className='flex items-center font-medium text-green-300 hover:text-green-400'>
                                 <MdHome size={20} />
-                                <span className='ml-1'>Home</span>
+                                <span className='ml-1 text-white'>Home</span>
                             </Link>
-                            <Link to='/favorites' className='flex items-center text-lg hover:text-green-300' onClick={() => setMenuOpen(false)}>
-                                <MdFavorite size={20} />
-                                <span className='ml-1'>Favorites</span>
+                            <Link to='/favorites' className='flex items-center font-medium text-red-400 hover:text-red-500'>
+                                <MdFavorite size={18} />
+                                <span className='ml-1 text-white'>Favorites</span>
                             </Link>
                         </ul>
                     </div>
