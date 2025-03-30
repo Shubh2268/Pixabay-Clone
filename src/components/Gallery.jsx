@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import { Link } from 'react-router';
 
 const Gallery = () => {
     const { images, loading, page, nextPage, prevPage } = useContext(AppContext);
@@ -20,9 +21,9 @@ const Gallery = () => {
                             const tagsArray = image.tags.split(',').slice(0, 5);
 
                             return (
-                                <div key={image.id} className='relative overflow-hidden shadow-md group'>
+                                <Link key={image.id} to={`/details/${image.id}`} className='relative overflow-hidden shadow-md group gap-4 space-y-4'>
                                     {/* Image */}
-                                    <img src={image.webformatURL} alt={image.tags} className='w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105'/>
+                                    <img src={image.webformatURL} alt={image.tags} className='w-full h-auto object-cover transition-transform duration-700 ease-in-out' />
 
                                     {/* Tags */}
                                     <div className='absolute bottom-3 left-2 flex flex-wrap gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -32,14 +33,14 @@ const Gallery = () => {
                                             </span>
                                         ))}
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })}
                     </div>
 
                     {/* Pagination */}
                     <div className='flex justify-center items-center gap-4 my-8'>
-                        <button onClick={prevPage} disabled={page === 1} className={`px-4 py-1 border-2 border-green-500 rounded-md font-semibold transition ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-500 hover:text-white'}`}>&lt; Previous</button>
+                        <button onClick={prevPage} disabled={page === 1} className={`px-4 py-1 border-2 border-green-500 rounded-md font-semibold transition ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-500 hover:text-white'}`}>&lt; Prev</button>
 
                         <span className='text-lg font-semibold text-gray-800'>Page {page}</span>
 
