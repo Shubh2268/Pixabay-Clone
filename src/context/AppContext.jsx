@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useCallback } from 'react';
 import { fetchImages } from '../utils/FetchImages';
 import { fetchDetails } from '../utils/FetchDetails';
+import { fetchRelated } from '../utils/FetchRelated';
 
 export const AppContext = createContext();
 
@@ -10,6 +11,7 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [imageDetails, setImageDetails] = useState(null);
+  const [relatedImages, setRelatedImages] = useState([]);
 
   // Fetch images when query or page changes
   useEffect(() => {
@@ -27,7 +29,7 @@ export const AppProvider = ({ children }) => {
   const updateQuery = (newQuery) => {
     if (newQuery !== query) {
       setQuery(newQuery);
-      setPage(1); 
+      setPage(1);
     }
   };
 
@@ -38,14 +40,20 @@ export const AppProvider = ({ children }) => {
     setLoading(true);
     setImageDetails(null);
 
-    try {
-      const details = await fetchDetails(imageId);
-      setImageDetails(details);
-    } catch (error) {
-      console.error('Error fetching image details:', error);
-    }
+    const details = await fetchDetails(imageId);
+    setImageDetails(details);
 
     setLoading(false);
+  }, []);
+
+  // Fetch related images
+  const getRelatedImages = useCallback(async (imageTags) => {
+    if (!imageTags) return;
+
+    setRelatedImages([]);
+
+    const related = await fetchRelated(imageTags);
+    setRelatedImages(related);
   }, []);
 
   // Pagination controls
@@ -63,7 +71,9 @@ export const AppProvider = ({ children }) => {
         nextPage,
         prevPage,
         imageDetails,
+        relatedImages,
         getImageDetails,
+        getRelatedImages,
       }}>
       {children}
     </AppContext.Provider>
