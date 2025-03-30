@@ -3,12 +3,12 @@ import { AppContext } from '../context/AppContext';
 import { Link } from 'react-router';
 
 const Gallery = () => {
-    const { images, loading, page, nextPage, prevPage } = useContext(AppContext);
+    const { images, loading, page, nextPage, prevPage, query } = useContext(AppContext);
 
     return (
         <section className='container mx-auto px-6 py-10'>
-            <h2 className='text-3xl font-bold text-center text-gray-800 mb-6'>
-                Trending Images
+            <h2 className='text-3xl font-bold text-center text-gray-800 mb-6 capitalize'>
+                {query} images
             </h2>
 
             {loading ? (
