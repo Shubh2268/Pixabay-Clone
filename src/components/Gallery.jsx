@@ -12,7 +12,9 @@ const Gallery = () => {
             </h2>
 
             {loading ? (
-                <p className='text-center text-gray-500'>Loading...</p>
+                <div className='h-screen flex items-center justify-center'>
+                    <p className='text-center text-gray-900'>Loading...</p>
+                </div>
             ) : (
                 <>
                     {/* Image Grid */}
