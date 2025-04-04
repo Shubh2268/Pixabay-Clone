@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { AppContext } from '../context/AppContext';
 
@@ -6,7 +6,6 @@ const Details = () => {
   const { imageDetails, getImageDetails, loading, relatedImages, getRelatedImages } = useContext(AppContext);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     getImageDetails(id);
@@ -21,7 +20,6 @@ const Details = () => {
   if (loading) return <p className='text-center text-gray-500'>Loading...</p>;
   if (!imageDetails) return <p className='text-center text-red-500'>Image not found</p>;
 
-  const handleLike = () => setLiked(!liked);
 
   return (
     <div className='max-w-screen-xl mx-auto px-4 py-10 my-16'>
@@ -31,7 +29,7 @@ const Details = () => {
         <div className='md:w-2/3'>
           <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className='w-full rounded-lg shadow-lg' />
           <div className='mt-4 flex flex-wrap gap-4'>
-            <a href={imageDetails.largeImageURL} download={`pixora-image-${imageDetails.id}.jpg`} className='bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition'>Download</a>
+            <a href={imageDetails.largeImageURL} download className='bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition'>Download</a>
 
             {imageDetails.imageWidth && (
               <div className='text-sm text-gray-600 mt-2'>
@@ -43,7 +41,7 @@ const Details = () => {
 
         {/* Right: Info */}
         <div className='w-full md:w-2/5'>
-          <h2 className='text-lg md:text-2xl font-bold'>📷 Photographer: {imageDetails.user}</h2>
+          <h2 className='text-lg md:text-2xl font-bold'>📷 Photo: <span className='text-gray-600'>{imageDetails.user}</span></h2>
 
           {/* Tags */}
           <div className='mt-4'>
@@ -63,7 +61,6 @@ const Details = () => {
             <p>⬇ Downloads: {imageDetails.downloads}</p>
           </div>
 
-          
         </div>
       </div>
 
