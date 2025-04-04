@@ -54,7 +54,7 @@ const Details = () => {
           </div>
 
           {/* Stats */}
-          <div className='mt-6 space-y-2 text-gray-700'>
+          <div className='mt-6 space-y-2 text-gray-700 font-medium'>
             <p>👁️ Views: {imageDetails.views}</p>
             <p>⭐ Likes: {imageDetails.likes}</p>
             <p>❤️ Favorites: {imageDetails.favorites}</p>
