@@ -2,24 +2,13 @@ import { Link } from 'react-router';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaCameraRetro } from 'react-icons/fa';
 import { MdHome, MdFavorite } from 'react-icons/md';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    // Handle background color change on scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
-        <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 shadow-md' : 'bg-black/20'}`}>
+        <nav className='bg-black/80  w-full fixed top-0 left-0 z-50 transition-all duration-300'>
             <div className='px-5 flex items-center justify-between w-full h-16'>
                 {/* Logo */}
                 <div className='flex items-center text-white active:scale-95 duration-200'>

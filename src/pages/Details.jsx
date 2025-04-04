@@ -17,17 +17,17 @@ const Details = () => {
     }
   }, [imageDetails]);
 
-  if (loading) return <p className='text-center text-gray-500'>Loading...</p>;
+  if (loading) return <p className='text-center text-gray-500 h-screen'>Loading...</p>;
   if (!imageDetails) return <p className='text-center text-red-500'>Image not found</p>;
 
 
   return (
-    <div className='max-w-screen-xl mx-auto px-4 py-10 my-16'>
+    <div className='max-w-screen-xl mx-auto px-4 py-10 my-16 md:my-24'>
       {/* Top Section - Image and Details */}
       <div className='flex flex-col md:flex-row gap-10'>
         {/* Left: Image */}
         <div className='md:w-2/3'>
-          <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className='w-full rounded-lg shadow-lg' />
+          <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className='w-full max-h-4/5 shadow-lg' />
           <div className='mt-4 flex flex-wrap gap-4'>
             <a href={imageDetails.largeImageURL} download className='bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition'>Download</a>
 
@@ -41,7 +41,7 @@ const Details = () => {
 
         {/* Right: Info */}
         <div className='w-full md:w-2/5'>
-          <h2 className='text-lg md:text-2xl font-bold'>📷 Photo: <span className='text-gray-600'>{imageDetails.user}</span></h2>
+          <h2 className='text-lg md:text-2xl font-semibold'>📷 Photo: <span className='font-bold'>{imageDetails.user}</span></h2>
 
           {/* Tags */}
           <div className='mt-4'>
@@ -67,9 +67,9 @@ const Details = () => {
       {/* Related Images */}
       <div className='mt-16'>
         <h3 className='text-xl font-semibold mb-6'>Related Images</h3>
-        <div className='flex flex-wrap gap-4'>
+        <div className='flex flex-wrap justify-center md:justify-normal gap-4'>
           {relatedImages.map(image => (
-            <img key={image.id} src={image.previewURL} alt={image.tags} className='w-36 h-24 md:w-48 md:h-32 lg:w-56 lg:h-36 object-cover rounded-md cursor-pointer hover:opacity-80 transition' onClick={() => navigate(`/details/${image.id}`)} />
+            <img key={image.id} src={image.largeImageURL} alt={image.tags} className='w-36 h-24 md:w-48 md:h-32 lg:w-56 lg:h-40 object-cover cursor-pointer transition' onClick={() => navigate(`/details/${image.id}`)} />
           ))}
         </div>
       </div>
