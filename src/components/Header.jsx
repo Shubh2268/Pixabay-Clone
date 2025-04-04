@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
-    <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[75vh] flex flex-col' 
+    <header className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[80vh] flex flex-col' 
       style={{ backgroundImage: `url(${bgImage})` }}>
       <div className='absolute inset-0 bg-black opacity-50' />
 
