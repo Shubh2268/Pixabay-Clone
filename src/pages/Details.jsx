@@ -51,7 +51,7 @@ const Details = () => {
           </div>
 
           {/* Right: Info */}
-          <div className='w-full md:w-2/5 border border-green-400 bg-white p-5 md:p-8 rounded-2xl'>
+          <div className='w-full md:w-2/5 h-fit border border-green-400 bg-white p-5 md:p-8 rounded-2xl'>
             <h2 className='text-lg md:text-2xl font-semibold'>
               📷 Photo: <span className='font-bold'>{imageDetails.user}</span>
             </h2>
