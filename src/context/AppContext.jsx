@@ -6,6 +6,7 @@ import { fetchRelated } from '../utils/FetchRelated';
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+  
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState('trending');
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,17 @@ export const AppProvider = ({ children }) => {
   const [imageDetails, setImageDetails] = useState(null);
   const [relatedImages, setRelatedImages] = useState([]);
 
-  // Fetch images when query or page changes
+  // Favorites - load from localStorage on first load
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem('favorites');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  // Fetch Images whenever query or page changes
   useEffect(() => {
     const loadImages = async () => {
       setLoading(true);
@@ -25,11 +36,11 @@ export const AppProvider = ({ children }) => {
     loadImages();
   }, [query, page]);
 
-  // Update search query and reset page
+  // Update search query
   const updateQuery = (newQuery) => {
     if (newQuery !== query) {
       setQuery(newQuery);
-      setPage(1);
+      setPage(1); // reset page
     }
   };
 
@@ -46,7 +57,7 @@ export const AppProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  // Fetch related images
+  // Fetch Related images
   const getRelatedImages = useCallback(async (imageTags) => {
     if (!imageTags) return;
 
@@ -56,9 +67,26 @@ export const AppProvider = ({ children }) => {
     setRelatedImages(related);
   }, []);
 
-  // Pagination controls
+  // Pagination Control
   const nextPage = () => setPage((prevPage) => prevPage + 1);
   const prevPage = () => setPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
+
+  // Toggle Favorite
+  const toggleFavorite = (image) => {
+    const exists = favorites.find((fav) => fav.id === image.id);
+    if (exists) {
+      // If already liked, remove it
+      setFavorites(favorites.filter((fav) => fav.id !== image.id));
+    } else {
+      // Else, add it to favorites
+      setFavorites([...favorites, image]);
+    }
+  };
+
+  // To check if image is liked 
+  const isFavorite = (id) => {
+    return favorites.some((fav) => fav.id === id);
+  };
 
   return (
     <AppContext.Provider
@@ -74,6 +102,9 @@ export const AppProvider = ({ children }) => {
         relatedImages,
         getImageDetails,
         getRelatedImages,
+        favorites,
+        toggleFavorite,
+        isFavorite,
       }}>
       {children}
     </AppContext.Provider>

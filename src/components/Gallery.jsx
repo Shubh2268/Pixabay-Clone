@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import { Link } from 'react-router';
 
 const Gallery = () => {
-    const { images, loading, page, nextPage, prevPage, query } = useContext(AppContext);
+    const { images, loading, page, nextPage, prevPage, query, toggleFavorite, isFavorite } = useContext(AppContext);
 
     return (
         <section className='container mx-auto px-6 py-10'>
@@ -21,21 +21,29 @@ const Gallery = () => {
                     <div className='columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4'>
                         {images.map((image) => {
                             const tagsArray = image.tags.split(',').slice(0, 5);
+                            const liked = isFavorite(image.id);
 
                             return (
-                                <Link key={image.id} to={`/details/${image.id}`} className='relative overflow-hidden shadow-md group gap-4 space-y-4'>
-                                    {/* Image */}
-                                    <img src={image.webformatURL} alt={image.tags} className='w-full h-auto object-cover transition-transform duration-700 ease-in-out' />
+                                <div key={image.id} className='relative group break-inside-avoid'>
+                                    {/* Like Button */}
+                                    <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 bg-white rounded-full p-1 shadow hover:scale-110 transition-transform'>
+                                        {liked ? '❤️' : '🤍'}
+                                    </button>
 
-                                    {/* Tags */}
-                                    <div className='absolute bottom-3 left-2 flex flex-wrap gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                        {tagsArray.map((tag, index) => (
-                                            <span key={index} className='text-gray-100 text-sm md:text-base m-1'>
-                                                {tag.trim()}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </Link>
+                                    {/* Image Link */}
+                                    <Link to={`/details/${image.id}`} className='block overflow-hidden shadow-md group'>
+                                        <img src={image.webformatURL} alt={image.tags}className='w-full h-auto object-cover transition-transform duration-700 ease-in-out'/>
+
+                                        {/* Tags */}
+                                        <div className='absolute bottom-3 left-2 flex flex-wrap gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                            {tagsArray.map((tag, index) => (
+                                                <span key={index} className='text-gray-100 text-sm md:text-base m-1'>
+                                                    {tag.trim()}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </Link>
+                                </div>
                             );
                         })}
                     </div>
