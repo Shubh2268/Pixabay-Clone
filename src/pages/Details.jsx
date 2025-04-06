@@ -37,7 +37,7 @@ const Details = () => {
               {liked ? '❤️' : '🤍'}
             </button>
 
-            {/* Image Info */}
+            {/* Left: Info */}
             <div className='mt-4 flex flex-wrap gap-4'>
               <a href={imageDetails.largeImageURL} download className='bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition'>Download</a>
 
@@ -70,15 +70,15 @@ const Details = () => {
 
             {/* Stats */}
             <div className='mt-6 space-y-2 text-gray-700 font-medium'>
-              <p>👁️ Views: {imageDetails.views}</p>
-              <p>⭐ Likes: {imageDetails.likes}</p>
-              <p>❤️ Favorites: {imageDetails.favorites}</p>
-              <p>⬇ Downloads: {imageDetails.downloads}</p>
+              <p className='text-gray-600'>👁️ Views: <span className='text-black'>{imageDetails.views}</span></p>
+              <p className='text-gray-600'>⭐ Likes: <span className='text-black'>{imageDetails.likes}</span></p>
+              <p className='text-gray-600'>❤️ Favorites: <span className='text-black'>{imageDetails.favorites}</span></p>
+              <p className='text-gray-600'>⬇ Downloads: <span className='text-black'>{imageDetails.download}</span></p>
             </div>
 
             {/* Favorite Button */}
-            <button onClick={() => toggleFavorite(imageDetails)} className='mt-6 w-fit px-4 py-2 rounded-md font-semibold border border-green-500 bg-green-500 text-white outline-none hover:bg-transparent hover:text-green-500 transition'>
-              {isFavorite(imageDetails.id) ? 'Remove from Favorites' : 'Add to Favorites'}
+            <button onClick={() => toggleFavorite(imageDetails)} className='mt-6 w-fit px-4 py-2 rounded-md font-semibold border border-green-500 bg-green-500 text-white outline-none transition active:scale-95'>
+              {isFavorite(imageDetails.id) ? 'Remove Favorite' : 'Add to Favorites'}
             </button>
           </div>
 
