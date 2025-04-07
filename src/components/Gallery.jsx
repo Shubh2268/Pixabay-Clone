@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Link } from 'react-router';
+import { MdFavoriteBorder   } from 'react-icons/md';
+import { FcLike } from 'react-icons/fc';
 
 const Gallery = () => {
     const { images, loading, page, nextPage, prevPage, query, toggleFavorite, isFavorite } = useContext(AppContext);
@@ -26,8 +28,8 @@ const Gallery = () => {
                             return (
                                 <div key={image.id} className='relative group break-inside-avoid'>
                                     {/* Like Button */}
-                                    <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 bg-white rounded-full p-1 shadow hover:scale-110 transition-transform'>
-                                        {liked ? '❤️' : '🤍'}
+                                    <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 bg-gray-100 rounded-full p-2 shadow hover:scale-105 transition-transform'>
+                                        {liked ? <MdFavoriteBorder size={20} /> : <FcLike size={20} />}
                                     </button>
 
                                     {/* Image Link */}
