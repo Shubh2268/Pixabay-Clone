@@ -1,6 +1,8 @@
 import { useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { AppContext } from '../context/AppContext';
+import { MdFavoriteBorder   } from 'react-icons/md';
+import { FcLike } from 'react-icons/fc';
 
 const Details = () => {
   const {imageDetails, getImageDetails, loading, relatedImages, getRelatedImages, toggleFavorite, isFavorite} = useContext(AppContext);
@@ -33,8 +35,8 @@ const Details = () => {
             <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className='w-full max-h-4/5 shadow-lg'/>
 
             {/* Like Button on Image */}
-            <button onClick={() => toggleFavorite(imageDetails)} className='absolute top-3 right-3 z-10 bg-white rounded-full p-2 shadow-md hover:scale-110 transition'>
-              {liked ? '❤️' : '🤍'}
+            <button onClick={() => toggleFavorite(imageDetails)} className='absolute top-3 right-3 z-10 bg-white rounded-full p-2 shadow-md transition'>
+              {liked ? <FcLike size={20} /> : <MdFavoriteBorder size={20} />}
             </button>
 
             {/* Left: Info */}

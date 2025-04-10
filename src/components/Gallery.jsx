@@ -29,7 +29,7 @@ const Gallery = () => {
                                 <div key={image.id} className='relative group break-inside-avoid'>
                                     {/* Like Button */}
                                     <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 bg-gray-100 rounded-full p-2 shadow hover:scale-105 transition-transform'>
-                                        {liked ? <MdFavoriteBorder size={20} /> : <FcLike size={20} />}
+                                        {liked ? <FcLike size={20} /> : <MdFavoriteBorder size={20} />}
                                     </button>
 
                                     {/* Image Link */}
