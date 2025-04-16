@@ -10,7 +10,7 @@ const Error = () => {
             <h1 className='text-2xl md:text-3xl font-bold text-gray-800 mb-4'>404 - Page Not Found</h1>
             <p className='text-gray-600 text-md md:text-lg mb-6'>Sorry, the page you are looking for doesn't exist or has been moved.</p>
 
-            <Link to='/' className='inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md font-semibold transition'>Go Back Home</Link>
+            <Link to='/' className='inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md font-semibold transition active:scale-95'>Go Back Home</Link>
         </div>
     );
 };
