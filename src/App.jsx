@@ -5,6 +5,7 @@ import Details from './pages/Details'
 import Favorites from './pages/Favorites'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Error from './pages/Error'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/details/:id' element={<Details />} />
         <Route path='/favorites' element={<Favorites />} />
+        <Route path='/*' element={<Error />} /> 
       </Routes>
       <Footer />
     </Router>
