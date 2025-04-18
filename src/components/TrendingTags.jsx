@@ -35,7 +35,7 @@ const TrendingTags = () => {
             <div className='overflow-x-auto no-scrollbar px-10'>
                 <div ref={scrollRef} className='flex w-max space-x-2'>
                     {categories.map((category, index) => (
-                        <button key={index} onClick={() => handleClick(category)} className='backdrop-blur-lg text-gray-200 py-1.5 px-2 md:px-4 rounded-lg border border-gray-300 text-[9px] md:text-xs whitespace-nowrap transition hover:bg-white/10 focus:bg-green-400/70 focus:text-white'>
+                        <button key={index} onClick={() => handleClick(category)} className='backdrop-blur-lg text-gray-200 py-1 md:py-1.5 px-2 md:px-4 rounded-lg border border-gray-300 text-[9px] md:text-xs whitespace-nowrap transition hover:bg-white/10 focus:bg-green-400/70 focus:text-white'>
                             {category.charAt(0).toUpperCase() + category.slice(1)}
                         </button>
                     ))}

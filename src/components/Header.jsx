@@ -5,7 +5,7 @@ import TrendingTags from './TrendingTags';
 const Header = () => {
   return (
     <header
-      className='relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center items-center text-center px-6'
+      className='relative bg-cover bg-center text-white min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center items-center text-center px-6'
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay */}
