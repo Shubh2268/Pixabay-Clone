@@ -28,8 +28,8 @@ const Gallery = () => {
                             return (
                                 <div key={image.id} className='relative group break-inside-avoid'>
                                     {/* Like Button */}
-                                    <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 bg-gray-100 rounded-full p-2 shadow hover:scale-105 transition-transform'>
-                                        {liked ? <FcLike size={20} /> : <MdFavoriteBorder size={20} />}
+                                    <button onClick={() => toggleFavorite(image)}className='absolute top-2 right-2 z-10 text-lg bg-white/80 backdrop-blur-lg rounded-full p-2 hover:scale-110 ease-in smooth duration-300 transition-transform'>
+                                        {liked ? <FcLike /> : <MdFavoriteBorder />}
                                     </button>
 
                                     {/* Image Link */}
