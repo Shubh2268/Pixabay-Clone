@@ -20,7 +20,7 @@ const SearchBar = () => {
         placeholder='Search for images...'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className='w-full max-w-lg px-4 py-2 md:py-3 border-y border-l border-gray-400 rounded-l-full backdrop-blur-lg text-white focus:outline-none'
+        className='w-full max-w-lg px-4 py-2 md:py-3 border-y border-l border-gray-300 rounded-l-full backdrop-blur-lg text-white focus:outline-none'
       />
 
       <button type='submit' className='px-3 md:px-6 py-2 md:py-3 border border-gray-300 bg-green-500 text-white font-semibold rounded-r-full hover:bg-green-600 transition cursor-pointer'>Search</button>

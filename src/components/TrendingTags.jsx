@@ -22,7 +22,7 @@ const TrendingTags = () => {
                 <div className='overflow-x-auto no-scrollbar'>
                     <div className='flex w-max space-x-2 px-4'>
                         {categories.map((category, index) => (
-                            <button key={index} onClick={() => handleClick(category)} className='bg-gray-100 text-gray-700 py-1.5 px-4 rounded-full text-sm hover:bg-gray-200 border border-gray-300 whitespace-nowrap transition'> {category.charAt(0).toUpperCase() + category.slice(1)} </button>
+                            <button key={index} onClick={() => handleClick(category)} className='backdrop-blur-lg text-gray-200 py-1.5 px-4 rounded-md border border-gray-300 text-sm whitespace-nowrap transition'> {category.charAt(0).toUpperCase() + category.slice(1)} </button>
                         ))}
                     </div>
                 </div>

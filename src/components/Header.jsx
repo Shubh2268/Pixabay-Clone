@@ -27,7 +27,7 @@ const Header = () => {
       </div>
 
       {/* Trending Tags */}
-      <div className='relative z-10 w-full mt-8'>
+      <div className='relative z-10 w-full mt-4'>
         <TrendingTags />
       </div>
     </header>
