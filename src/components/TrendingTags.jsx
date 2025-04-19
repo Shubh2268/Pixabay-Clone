@@ -27,13 +27,13 @@ const TrendingTags = () => {
     return (
         <div className='bg-transparent py-3 relative max-w-5xl mx-auto'>
             {/* Left Arrow */}
-            <button onClick={() => scroll('left')} className='absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/80'>
+            <button onClick={() => scroll('left')} className='absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 cursor-pointer'>
                 <FaChevronLeft size={10} />
             </button>
 
             {/* Tags */}
-            <div className='overflow-x-auto no-scrollbar px-10'>
-                <div ref={scrollRef} className='flex w-max space-x-2'>
+            <div ref={scrollRef} className='overflow-x-auto no-scrollbar px-10'>
+                <div className='flex w-max space-x-2'>
                     {categories.map((category, index) => (
                         <button key={index} onClick={() => handleClick(category)} className='backdrop-blur-lg text-gray-200 py-1 md:py-1.5 px-2 md:px-4 rounded-lg border border-gray-300 text-[9px] md:text-xs whitespace-nowrap transition hover:bg-white/10 focus:bg-green-400/70 focus:text-white'>
                             {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -43,7 +43,7 @@ const TrendingTags = () => {
             </div>
 
             {/* Right Arrow */}
-            <button onClick={() => scroll('right')} className='absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/80'>
+            <button onClick={() => scroll('right')} className='absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 cursor-pointer'>
                 <FaChevronRight size={10} />
             </button>
         </div>
