@@ -48,3 +48,5 @@ Pixora is a visually appealing image gallery application powered by the Pixabay 
 
 👉 **Context API**: Global state management for query, favorites, and image data.
 
+## <a name="links">🔗 Links</a> 
+
