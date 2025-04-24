@@ -50,3 +50,6 @@ Pixora is a visually appealing image gallery application powered by the Pixabay 
 
 ## <a name="links">🔗 Links</a> 
 
+- [Live Website](https://pixora-world.netlify.app)
+
+  
