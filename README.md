@@ -24,3 +24,14 @@
 ## <a name="introduction">🤖 Introduction</a>
 
 Pixora is a visually appealing image gallery application powered by the Pixabay API. It allows users to explore high-quality stock photos, search for specific images, view detailed information, and manage their favorite images with a clean, responsive UI.
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- Vite
+- React.Js
+- Tailwind CSS
+- Pixabay API
+- Context API for state management
+- LocalStorage for persistent favorites
+
+
