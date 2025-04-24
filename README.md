@@ -34,4 +34,17 @@ Pixora is a visually appealing image gallery application powered by the Pixabay 
 - Context API for state management
 - LocalStorage for persistent favorites
 
+## <a name="features">🔋 Features</a> 
+
+👉 **Search Functionality**:Instantly find images based on any keyword.
+
+👉 **Trending Tags**:Clickable horizontal-scrolling trending tags for quick exploration.
+
+👉 **Favorites System**:Like/unlike images and view your saved ones on a dedicated page (stored in localStorage).
+
+👉 **Related Images**:Discover more content based on tags of the selected image.
+
+👉 **Responsive Design**:Mobile-friendly and adapts across all screen sizes.
+
+👉 **Context API**:Global state management for query, favorites, and image data.
 
