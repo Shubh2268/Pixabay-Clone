@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
 
-  <h3 align="center">Pixora-World, the Image Gallery</h3>
+  <h3 align="center">Pixora – Image Gallery Web App</h3>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -22,3 +22,5 @@
 6. 🔗 [Links](#links)
 
 ## <a name="introduction">🤖 Introduction</a>
+
+Pixora is a visually appealing image gallery application powered by the Pixabay API. It allows users to explore high-quality stock photos, search for specific images, view detailed information, and manage their favorite images with a clean, responsive UI.
