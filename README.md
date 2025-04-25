@@ -1,7 +1,7 @@
 <div align="center">
    <br />
     <a href="https://pixora-world.netlify.app" target="_blank">
-      <img src="https://cdn.corenexis.com/view/?img=mm/ap20/MeXrvi.png" alt="Pixora">
+      <img src="https://i.postimg.cc/GtgsqgBG/Pixora.png" alt="Pixora">
     </a>
   <br />
    
